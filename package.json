@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the IA Levy React project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@calcom/embed-react": "^1.0.0",
+    "autoprefixer": "^10.4.19",
+    "next": "^14.2.3",
+    "postcss": "^8.4.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scroll": "^1.9.0",
+    "tailwindcss": "^3.4.3"
+  }
+}

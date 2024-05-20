@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  @apply m-0 bg-[#130202] text-white font-montserrat;
+  overflow-y: auto; /* Permitimos el scroll vertical */
+}
+
+.navbar {
+  @apply flex justify-between items-center p-2 border-b-2 border-[#A84D31];
+}
+
+.navbar-brand {
+  @apply text-lg font-bold;
+}
+
+.navbar-links {
+  @apply flex flex-wrap;
+}
+
+.navbar-links a {
+  @apply text-xs md:text-sm lg:text-base text-white cursor-pointer ml-2 md:ml-2 text-center;
+  display: flex;
+  align-items: center;
+}
+
+.special-hover {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.special-hover:hover {
+  @apply bg-[#489193] text-white transition ease-in-out duration-300;
+  animation: specialHoverAnimation 0.5s ease-in-out forwards;
+}
+
+.orange-btn-hover {
+  @apply bg-[#A84D31] text-white rounded-lg shadow-lg p-1;
+}
+
+.orange-btn-hover:hover {
+  @apply bg-[#489193] transition ease-in-out duration-300;
+}
+
+@keyframes specialHoverAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.chat-container {
+  @apply flex flex-col h-[calc(100vh-50px)];
+  background: linear-gradient(145deg, #542219, #0B2529, #215259, #542219, #0B2529);
+  background-size: 600% 600%;
+  animation: gradientBackground 30s ease infinite;
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.chat-header {
+  @apply flex flex-col items-center p-3 border-b-2 border-[#542219] rounded bg-gradient-to-r from-[#542219] to-[#215259] m-1;
+}
+
+.chat-icon {
+  @apply w-24 h-24 rounded-full;
+}
+
+.chat-title {
+  @apply mt-2 text-2xl;
+}
+
+.chat-content-vertical {
+  @apply flex flex-col justify-between p-3 rounded bg-gradient-to-r from-[#0B2529] to-[#489193] m-1 overflow-hidden;
+}
+
+.chat-messages {
+  @apply flex-1 overflow-y-auto mb-2 border-2 border-[#215259] rounded p-2 bg-[#0B2529];
+}
+
+.chat-input-container {
+  @apply flex mt-4 mb-4 justify-center;
+}
+
+#chatInput {
+  @apply flex-1 p-2 rounded bg-[#215259] text-white mx-2;
+}
+
+#sendButton {
+  @apply p-2 bg-[#A84D31] text-white border-none rounded cursor-pointer mx-2;
+}
+
+#startButton {
+  @apply p-2 bg-[#A84D31] text-white border-none rounded cursor-pointer self-center mb-3;
+}
+
+.chat-message {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.user-message, .assistant-message {
+  @apply flex items-center my-1 p-1 rounded;
+}
+
+.user-message {
+  @apply bg-[#215259] self-end text-white flex-row-reverse;
+}
+
+.assistant-message {
+  @apply bg-[#542219] self-start text-white;
+}
+
+.user-avatar, .assistant-avatar {
+  @apply w-10 h-10 flex-shrink-0; /* Tamaño fijo para evitar que se reduzca */
+}
+
+.user-avatar {
+  background: url('/images/user.png') center/cover;
+}
+
+.assistant-avatar {
+  background: url('/images/assistant.png') center/cover;
+}
+
+.message-content {
+  @apply flex-1; /* Ocupa el espacio restante sin reducir el tamaño de los avatares */
+}
+
+#sendButton:hover, #startButton:hover {
+  @apply bg-[#489193] text-white transition ease-in-out duration-300;
+}
+
+a:hover {
+  @apply text-[#542219] transition ease-in-out duration-300;
+}
+
+.special-hover:hover {
+  @apply bg-[#489193] text-white transition ease-in-out duration-300;
+  animation: specialHoverAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes specialHoverAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.special-hover {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
